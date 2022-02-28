@@ -2,16 +2,16 @@ const Manager = require('../lib/Manager.js')
 const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
 
-var managerCards = [''];
+var employeeCards = [''];
 
 //function to create manager cards
-const generateManagerCards = employee => {
+const generateEmployeeCards = employee => {
    
         return `
-        <div class = "card justify-content-center text-center" style="width: 18rem;">
-          <div class = "card-body">
+        <div class = "card  justify-content-center text-center" style="width: 18rem;">
+          <div class = "card-body ">
             <h5 class = "card-title name text-center">${employee.name}</h5>            
-            <p class = "card-text role text-center"> ${employee.role}</p>
+            <p class = "card-text ${employee.role} role text-center"> ${employee.role}</p>
             <p class = "card-text id text-center"> Employee ID: ${employee.id} </p>
             ${officeGithubSchool(employee)}
             <a href="mailto: abc@example.com" class="btn btn-primary email">${employee.email}</a>
@@ -32,12 +32,13 @@ const officeGithubSchool = employee => {
   }
   if (employee.role === "Engineer") {
     return `
-    <a href="github.com/${employee.gitHub}" class="btn btn-primary ">Github is ${employee.github}</a>
-
+    <p>
+    <a href="github.com/${employee.github}" class="btn btn-primary ">Github is ${employee.github}</a>
+    </p>
     `
   }
 
-  if(employee.role === "Inter") {
+  if(employee.role === "Intern") {
     return `
     <p class = "card-text school text-center"> Inter School: ${employee.school} </p>
 
@@ -56,15 +57,15 @@ for (let i=0; i< managerArray.length; i++) {
   var employee = managerArray[0]
   manager = new Manager(employee.name, employee.id, employee.email, employee.role, employee.officeNumber)
   if (manager) {
-  managerCards.push(generateManagerCards (manager));
+  employeeCards.push(generateEmployeeCards (manager));
   }
 }
 ///generate engineer cards
 for (let i=0; i< engineerArray.length; i++) {
   var employee = engineerArray[0]
-  engineer = new Engineer(employee.name, employee.id, employee.email, employee.role, employee.gitHub)
+  engineer = new Engineer(employee.name, employee.id, employee.email, employee.role, employee.github)
   if (engineer) {
-  managerCards.push(generateManagerCards (engineer));
+  employeeCards.push(generateEmployeeCards (engineer));
   }
 }
 //generate intern cards
@@ -72,11 +73,11 @@ for (let i=0; i< internArray.length; i++) {
   var employee = internArray[0]
   intern = new Intern(employee.name, employee.id, employee.email, employee.role, employee.school)
   if (intern) {
-  managerCards.push(generateManagerCards (intern));
+  employeeCards.push(generateEmployeeCards (intern));
   }
 }
 
-return managerCards;
+return employeeCards;
 }
 
 

@@ -1,0 +1,23 @@
+header {
+    font-size: 22px
+}
+
+.Manager {
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+}
+
+.Engineer {
+    background-color: blue;
+    color: white;
+    font-weight: bolder;
+}
+
+
+.Intern {
+    background-color: aqua;
+    color: black;
+    font-weight: bolder;
+}
+
