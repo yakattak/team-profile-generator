@@ -1,5 +1,7 @@
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
+const {writeFile, copyFile} = require('./utils/generate-site');
+
 
 var employeeArray = [];
 
@@ -56,7 +58,7 @@ const promptEmployee = employeeData => {
         {
             type: 'list',
             name: 'role',
-            choices: ['Intern', 'Manager', 'Engineer']
+            choices: [ 'Manager', 'Engineer','Intern']
         },
         {
             type: 'input',
@@ -122,3 +124,16 @@ const promptEmployee = employeeData => {
   .then(() => {
       return generatePage(employeeArray);
   })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
+  })
+  .then(writeFileResponse => {
+    console.log(writeFileResponse);
+    return copyFile();
+  })
+  .then(copyFileResponse => {
+    console.log(copyFileResponse);
+  })
+  .catch(err => {
+    console.log(err);
+  });
