@@ -31,5 +31,5 @@
   [Email: steve.calebrese@gmail.com](mailto:steve.calebrese@gmail.com)
 
 
-  ![Screenshot](screen-shot-team-profile.jpg)
+  ![Screenshot](./screen-shot-team-profile.jpg)
 
