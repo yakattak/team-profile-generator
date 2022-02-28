@@ -14,7 +14,8 @@ const generateEmployeeCards = employee => {
             <p class = "card-text ${employee.role} role text-center"> ${employee.role}</p>
             <p class = "card-text id text-center"> Employee ID: ${employee.id} </p>
             ${officeGithubSchool(employee)}
-            <a href="mailto: abc@example.com" class="btn btn-primary email">${employee.email}</a>
+             <a href="mailto: ${employee.email}" class="btn btn-primary email">Email: ${employee.email}</a>
+            
             </div>
 
 
