@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const generatePage = require('./src/page-template');
 
 var employeeArray = [];
 
@@ -117,4 +118,7 @@ const promptEmployee = employeeData => {
   };
 
 
- promptEmployee();
+ promptEmployee()
+  .then(() => {
+      return generatePage(employeeArray);
+  })
