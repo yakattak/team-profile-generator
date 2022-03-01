@@ -34,7 +34,7 @@ const officeGithubSchool = employee => {
   if (employee.role === "Engineer") {
     return `
     <p>
-    <a href="github.com/${employee.github}" class="btn btn-primary ">Github is ${employee.github}</a>
+    <a href="http://github.com/${employee.github}" class="btn btn-primary ">Github is ${employee.github}</a>
     </p>
     `
   }
